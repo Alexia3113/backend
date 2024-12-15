@@ -1,8 +1,9 @@
 import mongoose from 'mongoose';
 
 export const connectDB = async ()=>{
+    const URL= process.env.MONGODB;
     try{
-        await mongoose.connect("mongodb://127.0.0.1/sistema");
+        await mongoose.connect(URL);
         console.log("Base de datos conectada");
     }catch(error){
         console.log(error);
